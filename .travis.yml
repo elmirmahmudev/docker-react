@@ -1,13 +1,13 @@
-language: generic 
+language: generic
 sudo: required
 services:
-  - docker
+- docker
 before_install:
-  - docker build -t itismelmir/docker-react -f Dockerfile.dev .
+- docker build -t itismelmir/docker-react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true itismelmir/docker-react npm run test
+- docker run -e CI=true itismelmir/docker-react npm run test
 deploy:
   provider: heroku
   api_key:
-    secure: "4a01aac5-da6b-43fa-a7bc-7b91098e99a9"
+    secure: nZhWmiThfM1ZcwKjFnxow6BwqxQT85nj3D/QZbUoc3lCvUAJF2PiFaEPdxr+Mb6qpZoISGhA7xmxaycTrQ2clrMQExfW+HdbwhhW3oY42vm0Iice5ADDUqCzGxZjcbK3+5a7rQH62Csme4lbELJ/4E70lidN/mjBZRNJNtNtNZJttGNTZ49fc+YgKXCMdNr0eyQeh9NPxl3M3NSdOZitBljQNUTFTQR47JkUa5WGONjy4ueVs8frQcBtgjREbmhnkpfEU4iyZS3VdbqszztYc28Ndk6Z/8zcsY///2ebUBwD9/4hm1RAlr3wV0E6pHUWNhp3mRmo0JgngaSRyIK4VJSEH1SGppH2BEadn0ZdMWfbTnPywV+DTznfPYZMiNJmWmRcA9rgFVwHuBzLMyO2Id/M+Glj7R8i+s9/6aSh2A+jyBCrQm7EZ+heQw1KVN5Ehw1Gvygu2phWfUfyqi2J0bXyltpA+AVl6TvxuroRUpszMg882OCsEDXDyTMCaviJWxRsVpjobhHrWBRnPoC5yLNukh7ipyEpmxfoICAFYu/n8Ugko19rJ+oCJG1XuIha3k84u+IGBIkqsDtbYtb2GNeln5tXGJQQZvMkSfAwwRvCQ3tPMiZyASi9IZMw8mdFM9Q/p8pO7RoNXlK9wY5Vr/OhUGdOmhwKckw+/5jgC5Q=
   app: docker-reactjs
